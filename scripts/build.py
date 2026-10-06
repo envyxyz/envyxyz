@@ -250,8 +250,7 @@ def terminal(d, now):
     groups = [
         ('Profile', [('ROLE', 'AI & Full-Stack Engineer'), ('BASE', 'Lahore, Pakistan'),
                      ('STACK', 'React · Tailwind · TypeScript'), ('', 'C++ · .NET · Python · Java'),
-                     ('FOCUS', 'RAG · LangGraph · Agent Systems'),
-                     ('BUILDS', 'Web · Electron desktop · Android & iOS'),
+                     ('FOCUS', 'Agentic Systems · Automated Workflows'), ('', 'Fullstack Applications'),
                      ('NOW', 'OpenHelios · a personal harness, stripped and fast')]),
         ('System', [('REPOS', f"{d['repos']} public · {d['stars']} stars"), ('LANGS', None),
                     ('UPTIME', uptime(d['created'], now) + ' on GitHub'),
