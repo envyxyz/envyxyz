@@ -221,7 +221,11 @@ def streaks(days):
 
 def greeting(now):
     h = now.hour
-    return 'Good morning' if 5 <= h < 12 else 'Good afternoon' if h < 17 else 'Bonsoir' if h < 22 else 'Bonne nuit'
+    if 5 <= h < 12:
+        return 'Good morning'
+    if 12 <= h < 17:
+        return 'Good afternoon'
+    return 'Bonsoir' if 17 <= h < 22 else 'Bonne nuit'
 
 
 def uptime(created, now):
@@ -376,7 +380,7 @@ def ledger(d, now):
     peak_day = dt.date.fromisoformat(peak[0])
     body.append(text(wx + 32, wy + 82, 'The Ledger', 'si', 32, IVORY))
     body.append(text(wx + 34, wy + 106, f"{d['total']:,} contributions in the last year", size=12, fill=MUTED))
-    stats = [('STREAK', f'{cur} day' + ('s' if cur != 1 else '')), ('BEST', f'{best} days'),
+    stats = [('STREAK', f'{cur} day' + ('s' if cur != 1 else '') if cur else 'at anchor'), ('BEST', f'{best} days'),
              ('PEAK', f"{peak[1]} on {peak_day.day} {peak_day.strftime('%b')}")]
     x = wx + ww - 34
     for k, v in reversed(stats):
@@ -518,4 +522,6 @@ def main():
 
 
 if __name__ == '__main__':
+    assert [greeting(dt.datetime(2026, 1, 1, h)) for h in (2, 6, 13, 19, 23)] == \
+        ['Bonne nuit', 'Good morning', 'Good afternoon', 'Bonsoir', 'Bonne nuit']
     main()
