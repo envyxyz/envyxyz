@@ -16,71 +16,84 @@ def shade(fn, cols, rows):
 
 
 def _eye(x, y):
-    X, Y, w = x, y * .62, .94
-    if abs(X) >= w:
+    """Almond eye with lashes, striated iris and an empty pupil; x is pre-scaled so units are square."""
+    w, y = 1.48, y - .1
+    if abs(x) >= w:
         return 0
-    t = 1 - (X / w) ** 2
-    top, bot = -.36 * t ** .8, .27 * t ** .95
-    if Y < top:
-        # lashes: short strokes leaning away from the centre
-        if top - Y < .13 and abs(X) < .82 and (X * 11) % 1 < .2:
-            return '/' if X > .12 else '\\' if X < -.12 else '|'
+    t = 1 - (x / w) ** 2
+    top, bot = -.66 * t ** .85, .52 * t ** .95
+    if y < top:
+        if top - y < .16 + .06 * t and abs(x) < w * .8 and (x * 5.5) % 1 < .17:
+            return '/' if x > .2 else '\\' if x < -.2 else '|'
         return 0
-    if Y > bot + .025:
+    if y > bot + .05:
         return 0
-    if Y > bot - .02:
-        return '.' if abs(X) > .5 else ':'
-    if Y < top + .04:
+    if y > bot - .03:
+        return '.' if abs(x) > w * .55 else '-'
+    if y < top + .07:
         return .97
-    r = math.hypot(X, Y)
-    if r < .09:
-        return 0  # pupil, the star glint sits here
-    if r < .28:
-        a = math.atan2(Y, X)
-        v = .2 + .38 * (.5 + .5 * math.sin(a * 24 + r * 30)) * (r / .28) ** .6
-        return .72 if r > .25 else v
-    lid = max(0, .14 - (Y - top)) / .14
-    return max(.1, .8 - .5 * (X / w) ** 2 - .4 * lid)
+    r = math.hypot(x, y)
+    if r < .17:
+        return 0  # pupil: the gold star glint sits here
+    if r < .5:
+        v = .22 + .4 * (.5 + .5 * math.sin(math.atan2(y, x) * 26 + r * 30)) * (r / .5) ** .5
+        return .75 if r > .44 else v
+    lid = max(0, .25 - (y - top)) / .25
+    return max(.12, .82 - .5 * (x / w) ** 2 - .45 * lid)
 
 
-def _flower(x, y):
-    X, Y = x, y * 1.2
-    # stem with a gentle sway
-    sx = .05 * math.sin(Y * 2.6 + .4)
-    if Y > -.02 and abs(X - sx) < .03:
+def _stem(y):
+    return .04 * math.sin(y * 2.6 + 1)
+
+
+def _rose(x, y):
+    """Top-down rose on a stem with two leaves; x is pre-scaled so units are square."""
+    dx, dy = x, y + .44
+    r, a = math.hypot(dx, dy) / .5, math.atan2(dy, dx)
+    edge = 1 + .08 * math.cos(5 * a + .6)
+    if r < edge:
+        if r > edge - .09:
+            return .3
+        if r < .09:
+            return 1
+        s = (a / (2 * math.pi) - 1.1 * math.sqrt(r)) % .5 * 2  # spiral petals
+        if s < .13:
+            return 0
+        return min(1, .25 + .55 * s + .25 * (.5 + .5 * math.cos(a + 2.3)) - .2 * r)
+    if y > -.05 and abs(x - _stem(y)) < .02:
         return '|'
-    for side, ly in ((-1, .38), (1, .62)):
-        ux, uy = X - side * .2, Y - ly
-        ang = side * -.55
-        px = ux * math.cos(ang) - uy * math.sin(ang)
-        py = ux * math.sin(ang) + uy * math.cos(ang)
-        e = (px / .21) ** 2 + (py / .075) ** 2
+    for side, ly, ln, t in ((-1, .36, .26, .55), (1, .6, .22, .5)):
+        d = (side * math.cos(t), -math.sin(t))
+        cx, cy = _stem(ly) + d[0] * ln, ly + d[1] * ln
+        px = (x - cx) * d[0] + (y - cy) * d[1]
+        py = -(x - cx) * d[1] + (y - cy) * d[0]
+        e = (px / ln) ** 2 + (py / (ln * .38)) ** 2
         if e < 1:
-            return '-' if abs(py) < .014 else .55 - .32 * e
-    dx, dy = X, Y + .42
-    r, a = math.hypot(dx, dy), math.atan2(dy, dx)
-    if r < .085:
-        return .98 if r < .05 else .12
-    outer = .5 * (.6 + .4 * abs(math.cos(3.5 * a)))
-    inner = .34 * (.58 + .42 * abs(math.cos(3.5 * a + math.pi / 2)))
-    if r < inner:
-        return .95 - .55 * r / inner
-    if r < outer:
-        return .78 - .58 * (r - inner) / (outer - inner) + .08 * math.cos(7 * a)
+            if abs(py) < .018 and px < ln * .85:
+                return '=' if px < 0 else '-'
+            return .7 - .45 * e - (.12 if py * side > 0 else 0)
     return 0
 
 
-def eye(cols=64, rows=21):
-    return shade(_eye, cols, rows)
+EYE_K = .78  # zoom so the eye fills the frame
 
 
-def flower(cols=40, rows=26):
-    return shade(_flower, cols, rows)
+def eye(cols=70, rows=18):
+    """Returns the lines and the pupil centre as (col, row) in character cells."""
+    asp = cols * .6 / (rows * 1.15)
+    lines = shade(lambda x, y: _eye(x * asp * EYE_K, y * EYE_K), cols, rows)
+    return lines, (cols / 2, (.1 / EYE_K + 1) * rows / 2)
+
+
+def rose(cols=46, rows=30):
+    asp = cols * .6 / (rows * 1.15)
+    return shade(lambda x, y: _rose(x * asp, y), cols, rows)
 
 
 SPIDER = [
-    "   /\\ .-. /\\",
-    "  /  (o.o)  \\",
-    " /  /(_ _)\\  \\",
-    "   /  / \\  \\",
+    r"    \  \  /  /",
+    r"  \__\ (oo) /__/",
+    r"  ___/ (::) \___",
+    r" /   / (__) \   \ ",
+    r"    /        \ ",
 ]
