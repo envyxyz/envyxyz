@@ -13,6 +13,7 @@ import json
 import math
 import os
 import random
+import re
 import sys
 import urllib.request
 from html import escape
@@ -449,7 +450,7 @@ def board(state):
         p = b.piece_at(s)
         if p:
             g = chess.svg.PIECES[p.symbol()]
-            g = g.replace('#fff', '@L').replace('#000', '@D').replace('@L', IVORY).replace('@D', '#141B26')
+            g = re.sub(r'#(?:000000|000|ffffff|fff|ececec)\b', lambda m: '#141B26' if m[0].startswith('#000') else IVORY, g)
             g = g.replace(' id="', ' data-id="')
             body.append(f'<g transform="translate({x + (sq - 45 * .86) / 2:.1f} {y + (sq - 45 * .86) / 2:.1f}) scale(.86)">{g}</g>')
     body.append(f'<rect x="{bx - .5}" y="{by - .5}" width="{sq * 8 + 1}" height="{sq * 8 + 1}" fill="none" stroke="{IVORY}" stroke-opacity=".35"/>')
