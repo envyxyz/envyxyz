@@ -1,64 +1,33 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:1A1A1A,100:2E2E2E&height=220&section=header&text=YOUR%20NAME&fontSize=52&fontColor=FFFFFF&fontAlignY=35&desc=Building%20things.%20Breaking%20things.%20Fixing%20things.&descAlignY=58&descSize=16&descColor=CCCCCC" width="100%" alt="banner" />
+<img src="https://raw.githubusercontent.com/envyxyz/envyxyz/output/hero.svg" width="100%" alt="Ameer. Founder of AH Growth. Quiet, well-made software for good brands.">
 
-<br>
+<img src="https://raw.githubusercontent.com/envyxyz/envyxyz/output/terminal.svg" width="100%" alt="Terminal card with an ASCII flower, profile details and live GitHub stats">
 
-<img src="https://img.shields.io/github/stars/yourusername/yourusername?style=for-the-badge&label=STARS&color=1A1A1A&labelColor=1A1A1A" alt="stars" />
-<img src="https://img.shields.io/github/forks/yourusername/yourusername?style=for-the-badge&label=FORKS&color=1A1A1A&labelColor=1A1A1A" alt="forks" />
-<img src="https://img.shields.io/github/followers/yourusername?style=for-the-badge&label=FOLLOWERS&color=1A1A1A&labelColor=1A1A1A" alt="followers" />
+<img src="https://raw.githubusercontent.com/envyxyz/envyxyz/output/ledger.svg" width="100%" alt="Contribution ledger for the last twelve months">
 
-</div>
-
-<br>
-
-## Know About Me
-
-Hey there, I'm **Your Name**.
-
-[Your field or role], with a genuine soft spot for [something specific and slightly odd]. By day I [what you actually do]. By night I write scripts to automate the parts of life I would rather not deal with myself. When I'm away from the keyboard, I'm probably [hobby one] or getting embarrassingly competitive at [hobby two].
-
-<br>
-
----
-
-## Top Projects
-
-| Project | Description |
-|---|---|
-| **[Project One]** | [What it does, and why it exists] |
-| **[Project Two]** | [What it does, and why it exists] |
-| **[Project Three]** | [What it does, and why it exists] |
-
-<br>
-
----
-
-## Connect
-
-<div align="center">
-
-<a href="https://github.com/yourusername"><img src="https://img.shields.io/badge/GITHUB-1A1A1A?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" /></a>
-<a href="https://linkedin.com/in/yourusername"><img src="https://img.shields.io/badge/LINKEDIN-1A1A1A?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
-<a href="mailto:you@example.com"><img src="https://img.shields.io/badge/EMAIL-1A1A1A?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" /></a>
-<a href="https://yourdomain.com/resume.pdf"><img src="https://img.shields.io/badge/RESUME-1A1A1A?style=for-the-badge" alt="Resume" /></a>
+<img src="https://raw.githubusercontent.com/envyxyz/envyxyz/output/board.svg" width="100%" alt="The open board: community chess anyone can play">
 
 </div>
 
+<!-- board:start -->
+<details>
+<summary>&nbsp;Choose the next move &nbsp;&middot;&nbsp; white to play</summary>
 <br>
 
-> Comments are love letters to whoever touches this code next. Usually that's me, six months from now, furious.
+**Pawn** &ensp; [a3](https://github.com/envyxyz/envyxyz/issues/new?title=chess%7Ca2a3&body=Submit+this+issue+to+play+a3.+The+board+on+the+profile+updates+in+about+a+minute+and+this+issue+closes+itself.) &middot; [a4](https://github.com/envyxyz/envyxyz/issues/new?title=chess%7Ca2a4&body=Submit+this+issue+to+play+a4.+The+board+on+the+profile+updates+in+about+a+minute+and+this+issue+closes+itself.) &middot; [b3](https://github.com/envyxyz/envyxyz/issues/new?title=chess%7Cb2b3&body=Submit+this+issue+to+play+b3.+The+board+on+the+profile+updates+in+about+a+minute+and+this+issue+closes+itself.) &middot; [b4](https://github.com/envyxyz/envyxyz/issues/new?title=chess%7Cb2b4&body=Submit+this+issue+to+play+b4.+The+board+on+the+profile+updates+in+about+a+minute+and+this+issue+closes+itself.) &middot; [c3](https://github.com/envyxyz/envyxyz/issues/new?title=chess%7Cc2c3&body=Submit+this+issue+to+play+c3.+The+board+on+the+profile+updates+in+about+a+minute+and+this+issue+closes+itself.) &middot; [c4](https://github.com/envyxyz/envyxyz/issues/new?title=chess%7Cc2c4&body=Submit+this+issue+to+play+c4.+The+board+on+the+profile+updates+in+about+a+minute+and+this+issue+closes+itself.) &middot; [d3](https://github.com/envyxyz/envyxyz/issues/new?title=chess%7Cd2d3&body=Submit+this+issue+to+play+d3.+The+board+on+the+profile+updates+in+about+a+minute+and+this+issue+closes+itself.) &middot; [d4](https://github.com/envyxyz/envyxyz/issues/new?title=chess%7Cd2d4&body=Submit+this+issue+to+play+d4.+The+board+on+the+profile+updates+in+about+a+minute+and+this+issue+closes+itself.) &middot; [e3](https://github.com/envyxyz/envyxyz/issues/new?title=chess%7Ce2e3&body=Submit+this+issue+to+play+e3.+The+board+on+the+profile+updates+in+about+a+minute+and+this+issue+closes+itself.) &middot; [e4](https://github.com/envyxyz/envyxyz/issues/new?title=chess%7Ce2e4&body=Submit+this+issue+to+play+e4.+The+board+on+the+profile+updates+in+about+a+minute+and+this+issue+closes+itself.) &middot; [f3](https://github.com/envyxyz/envyxyz/issues/new?title=chess%7Cf2f3&body=Submit+this+issue+to+play+f3.+The+board+on+the+profile+updates+in+about+a+minute+and+this+issue+closes+itself.) &middot; [f4](https://github.com/envyxyz/envyxyz/issues/new?title=chess%7Cf2f4&body=Submit+this+issue+to+play+f4.+The+board+on+the+profile+updates+in+about+a+minute+and+this+issue+closes+itself.) &middot; [g3](https://github.com/envyxyz/envyxyz/issues/new?title=chess%7Cg2g3&body=Submit+this+issue+to+play+g3.+The+board+on+the+profile+updates+in+about+a+minute+and+this+issue+closes+itself.) &middot; [g4](https://github.com/envyxyz/envyxyz/issues/new?title=chess%7Cg2g4&body=Submit+this+issue+to+play+g4.+The+board+on+the+profile+updates+in+about+a+minute+and+this+issue+closes+itself.) &middot; [h3](https://github.com/envyxyz/envyxyz/issues/new?title=chess%7Ch2h3&body=Submit+this+issue+to+play+h3.+The+board+on+the+profile+updates+in+about+a+minute+and+this+issue+closes+itself.) &middot; [h4](https://github.com/envyxyz/envyxyz/issues/new?title=chess%7Ch2h4&body=Submit+this+issue+to+play+h4.+The+board+on+the+profile+updates+in+about+a+minute+and+this+issue+closes+itself.)
 
-> I don't write bugs. I write undocumented features that occasionally cause a minor existential crisis.
+**Knight** &ensp; [Na3](https://github.com/envyxyz/envyxyz/issues/new?title=chess%7Cb1a3&body=Submit+this+issue+to+play+Na3.+The+board+on+the+profile+updates+in+about+a+minute+and+this+issue+closes+itself.) &middot; [Nc3](https://github.com/envyxyz/envyxyz/issues/new?title=chess%7Cb1c3&body=Submit+this+issue+to+play+Nc3.+The+board+on+the+profile+updates+in+about+a+minute+and+this+issue+closes+itself.) &middot; [Nf3](https://github.com/envyxyz/envyxyz/issues/new?title=chess%7Cg1f3&body=Submit+this+issue+to+play+Nf3.+The+board+on+the+profile+updates+in+about+a+minute+and+this+issue+closes+itself.) &middot; [Nh3](https://github.com/envyxyz/envyxyz/issues/new?title=chess%7Cg1h3&body=Submit+this+issue+to+play+Nh3.+The+board+on+the+profile+updates+in+about+a+minute+and+this+issue+closes+itself.)
 
-<br>
+<sub>Each move opens a prefilled issue. Submit it and the board answers in about a minute.</sub>
 
----
-
-## Contribution
+</details>
+<!-- board:end -->
 
 <div align="center">
 
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=yourusername&theme=github-compact&bg_color=1A1A1A&color=FFFFFF&line=FFFFFF&point=FFFFFF&hide_border=true" width="100%" alt="contribution graph" />
+<img src="https://raw.githubusercontent.com/envyxyz/envyxyz/output/footer.svg" width="100%" alt="Festina lente. Make haste, slowly.">
+
+<a href="https://x.com/envyxyz7">x.com/envyxyz7</a>
 
 </div>
