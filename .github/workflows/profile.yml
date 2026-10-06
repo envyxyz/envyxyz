@@ -1,0 +1,16 @@
+name: profile
+on:
+  push:
+    branches: [claude/friendly-cerf-h54ty0]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - name: probe graphql
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh api graphql -f query='query{user(login:"envyxyz"){createdAt followers{totalCount} repositories(ownerAffiliations:OWNER,privacy:PUBLIC){totalCount} contributionsCollection{totalCommitContributions restrictedContributionsCount contributionCalendar{totalContributions}}}}'
