@@ -227,8 +227,8 @@ def hero(d, now):
     body.append(text(tx - 2, 154, 'Ameer Hussain', size=46, extra='letter-spacing="-1.5"'))
     body.append(text(tx, 194, 'AI & Full-Stack Engineer', size=17))
     body.append(f'<line x1="{tx}" y1="218.5" x2="{tx + 28}" y2="218.5" stroke="{MUTED}"/>')
-    for i, s in enumerate(('RAG · LangGraph · Agent Systems', 'Web, desktop, Android & iOS apps',
-                           'I automate the boring stuff in businesses.')):
+    for i, s in enumerate(('I make artisan websites & automate boring workflows',
+                           'for businesses, consumers and anyone who needs it.')):
         body.append(text(tx, 248 + i * 24, s, size=13.5, fill=SOFT))
     return svg(h, panel(h, ''.join(body), split), 'Ameer Hussain. AI and full-stack engineer in Lahore.', 'M')
 
