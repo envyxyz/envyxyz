@@ -223,21 +223,22 @@ def hero(d, now):
                 + star(round(cx), round(cy), 8, FG, 2.0) + '</g></g></g>')
 
     tx = split + 56
-    body.append(caps(tx, 106, 'LAHORE · 31.52°N 74.36°E'))
-    body.append(text(tx - 2, 164, 'Ameer Hussain', size=46, extra='letter-spacing="-1.5"'))
-    body.append(text(tx, 204, 'AI & Full-Stack Engineer', size=17))
-    body.append(f'<line x1="{tx}" y1="228.5" x2="{tx + 28}" y2="228.5" stroke="{MUTED}"/>')
-    for i, s in enumerate(('RAG · LangGraph · Agent Systems', 'I automate the boring stuff in businesses.')):
-        body.append(text(tx, 258 + i * 24, s, size=13.5, fill=SOFT))
+    body.append(caps(tx, 96, 'LAHORE · 31.52°N 74.36°E'))
+    body.append(text(tx - 2, 154, 'Ameer Hussain', size=46, extra='letter-spacing="-1.5"'))
+    body.append(text(tx, 194, 'AI & Full-Stack Engineer', size=17))
+    body.append(f'<line x1="{tx}" y1="218.5" x2="{tx + 28}" y2="218.5" stroke="{MUTED}"/>')
+    for i, s in enumerate(('RAG · LangGraph · Agent Systems', 'Web, desktop, Android & iOS apps',
+                           'I automate the boring stuff in businesses.')):
+        body.append(text(tx, 248 + i * 24, s, size=13.5, fill=SOFT))
     return svg(h, panel(h, ''.join(body), split), 'Ameer Hussain. AI and full-stack engineer in Lahore.', 'M')
 
 
 def terminal(d, now):
-    h = 470
-    wx, wy, ww, wh = 40, 28, 920, 410
+    h = 536
+    wx, wy, ww, wh = 40, 28, 920, 476
     body = [f'<clipPath id="tcard"><rect width="{W}" height="{h}" rx="6"/></clipPath><g clip-path="url(#tcard)">',
             wallpaper('t', W, h), '</g>', window('t', wx, wy, ww, wh, 'ameer@envyxyz: ~ · zsh', W, h)]
-    body.append(ascii_block(art.rose(40, 24), wx + 50, wy + 76, 11.4, SOFT, 13.1))
+    body.append(ascii_block(art.rose(40, 24), wx + 50, wy + 106, 11.4, SOFT, 13.1))
     py = wy + wh - 22
     body.append(text(wx + 26, py, 'ameer@envyxyz ~ %', size=12.5, fill=MUTED))
     body.append(f'<rect x="{wx + 26 + 18 * 7.5:.1f}" y="{py - 11}" width="7.5" height="14" fill="{FG}" class="blink"/>')
@@ -248,7 +249,10 @@ def terminal(d, now):
     langs = sorted(d['langs'].items(), key=lambda kv: -kv[1])[:4]
     groups = [
         ('Profile', [('ROLE', 'AI & Full-Stack Engineer'), ('BASE', 'Lahore, Pakistan'),
-                     ('STACK', 'Next.js · TypeScript · Supabase'), ('FOCUS', 'RAG · LangGraph · Agent Systems')]),
+                     ('STACK', 'React · Tailwind · TypeScript'), ('', 'C++ · .NET · Python · Java'),
+                     ('FOCUS', 'RAG · LangGraph · Agent Systems'),
+                     ('BUILDS', 'Web · Electron desktop · Android & iOS'),
+                     ('NOW', 'OpenHelios · a personal harness, stripped and fast')]),
         ('System', [('REPOS', f"{d['repos']} public · {d['stars']} stars"), ('LANGS', None),
                     ('UPTIME', uptime(d['created'], now) + ' on GitHub'),
                     ('SYNCED', now.strftime('%a %d %b %Y, %H:%M') + ' PKT')]),
